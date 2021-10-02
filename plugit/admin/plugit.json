@@ -1,0 +1,10 @@
+{
+	"requires": ["express", "mailer"],
+	"npm": [],
+	"package": {
+		"scripts": {
+			"build:admin": "cross-env PAGE_KEY=admin vue-cli-service build",
+			"build-dev:admin": "cross-env PAGE_KEY=admin vue-cli-service build --no-clean --watch"
+		}
+	}
+}

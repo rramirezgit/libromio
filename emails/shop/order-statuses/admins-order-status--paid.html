@@ -1,0 +1,23 @@
+<%- include('../../admin/admins-layout-open.html', {
+	headerLink: {
+		text: 'VER ORDEN DE COMPRA',
+		url: APP_URL + adminBaseUrl + '/sales/orders/' + order.id
+	}
+}) %>
+<table class="container white">
+	<tr>
+		<td class="py-6">
+			<p class="font-sm pb-3">
+				Pedido <span class="px-1 whity blacky--text">#<%= order.code %></span>
+			</p>
+			<p class="font-xl">
+				<b>Pago recibido</b>
+			</p>
+			<p class="py-3">
+				El pago se acreditó el día <b><%= format.date(order.paidAt) %></b> a las <b><%= format.time(order.paidAt) %></b>
+			</p>
+		</td>
+	</tr>
+</table>
+
+<%- include('../../admin/admins-layout-close.html') %>

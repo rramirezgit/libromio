@@ -1,0 +1,5 @@
+{
+	"parent": "shop",
+	"plugin": true,
+	"npm": ["md5", "mercadopago"]
+}

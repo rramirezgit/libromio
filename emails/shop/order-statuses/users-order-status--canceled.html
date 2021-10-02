@@ -1,0 +1,23 @@
+<%- include('../users-layout-open.html', {
+	headerLink: {
+		text: 'IR A MIS COMPRAS',
+		url: APP_URL + '/user/orders'
+	}
+}) %>
+<table class="container white">
+	<tr>
+		<td class="py-6">
+			<p class="font-sm pb-3">
+				Pedido <span class="px-1 whity blacky--text">#<%= order.code %></span>
+			</p>
+			<p class="font-xl">
+				<b>La compra fue cancelada</b>
+			</p>
+			<p class="py-3">
+				De todas maneras, podés volver a realizarla ingresando en <a href="<%= APP_URL %>"><b><%= APP_URL.replace(/^https?:\/\//, '') %></b></a> ¡No pierdas la oportunidad de tener tus productos favoritos cuanto antes!
+			</p>
+		</td>
+	</tr>
+</table>
+
+<%- include('../users-layout-close.html') %>

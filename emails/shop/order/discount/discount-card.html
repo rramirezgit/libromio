@@ -1,0 +1,13 @@
+<% if (order.discount) { %>
+<table class="card">
+	<tr>
+		<td class="card-title">
+			Descuento Aplicado
+		</td>
+	</tr>
+	<tr>
+		<td class="card-content">Descuento <b><%= order.discount.discountName %></b></td>
+	</tr>
+</table>
+
+<% } %>

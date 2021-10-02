@@ -1,0 +1,44 @@
+<tr>
+	<td class="item-img-col py">
+		<img src="cid:order-item-image-<%= item.id %>" alt="<%= item.name %>" />
+	</td>
+	<td class="item-data-col">
+		<p><%= item.name %></p>
+		<p class="grey--text font-sm"><%= item.variantName %></p>
+		<p>
+			<b class="font-xxs whity blacky--text d-inline-block px-1 rounded nowrap">
+				SKU <%= item.sku %>
+			</b>
+		</p>
+		<p class="pt-2">
+			<% if (item.discount) { %>
+			<span class="line-through font-xxs grey--text mr-1 nowrap">
+				<%= format.price(item.initPrice) %>
+			</span>
+			<% } %>
+			<b class="nowrap"><%= format.price(item.price) %></b>
+		</p>
+		<% if (item.discount) { %>
+		<p class="font-sm blacky--text">
+			<%= item.discountName %> <b class="error--text nowrap"><%= item.discountPct %>% OFF</b>
+		</p>
+		<% } %>
+	</td>
+	<td class="item-total-col">
+		<p class="font-lg">
+			<b class="nowrap"><%= format.price(item.total) %></b>
+		</p>
+	
+		<% let metric = item.unitMetric.split('/') %>
+		<p class="grey--text nowrap font-sm">
+			<%= item.qty %> <%= item.qty==1 ? metric[0] : metric.join('') %>
+		</p>
+	
+		<% if (item.reachedByOrderDiscount) { %>
+		<p class="mt-2 success--light rounded-sm text-right d-inline-block" style="padding: 3px 8px;">
+			<span class="font-xxs"><%= order.discount.discountName %></span><br />
+			<b class="font-sm nowrap"><%= format.price(-item.orderDiscountTotal) %></b>
+		</p>
+		<% } %>
+	</td>
+</tr>

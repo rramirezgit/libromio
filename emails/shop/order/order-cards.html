@@ -1,0 +1,19 @@
+<tr>
+	<td><%- include('./payment/payment-card.html', {forUser}) %></td>
+</tr>
+<% if (order.delivery) { %>
+	<tr>
+		<td><%- include('./delivery/delivery-card.html', {forUser}) %></td>
+	</tr>
+<% } %>
+<tr>
+	<td><%- include('./contact/contact-card.html', {forUser}) %></td>
+</tr>
+<% if (order.discount) { %>
+	<tr>
+		<td><%- include('./discount/discount-card.html', {forUser}) %></td>
+	</tr>
+<% } %>
+<tr>
+	<td><%- include('./summary/summary-card.html', {forUser}) %></td>
+</tr>

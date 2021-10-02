@@ -1,0 +1,96 @@
+<% 
+	let itemsName = 'Productos';
+	let itemsAmount = order.items.reduce((sum, item) => sum + item.initTotal, 0);
+	let itemsDiscountName = 'Descuento Productos';
+	let itemsDiscountAmount = order.items.reduce((sum, item) => sum + item.discountTotal, 0);
+	let extraDiscountName = order.discount ? order.discount.discountName : '';
+	let extraItemsDiscountName = extraDiscountName;
+	let extraItemsDiscountAmount = order.discount ? order.discount.itemsDiscount : 0;
+	let itemsSubtotalAmount = itemsAmount - itemsDiscountAmount - extraItemsDiscountAmount;
+	let deliveryName = order.delivery ? order.delivery.methodName : '';
+	let deliveryAmount = order.delivery ? order.delivery.cost : 0;
+	let deliveryDiscountName = order.delivery ? (order.delivery.discountName || 'Descuento envío') : '';
+	let deliveryDiscountAmount = order.delivery ? order.delivery.discount : 0;
+	let extraDeliveryDiscountName = extraDiscountName;
+	let extraDeliveryDiscountAmount = order.discount ? order.discount.deliveryDiscount : 0;
+	let totalAmount = order.total;
+%> 
+
+<tr>
+	<td class="title-col">
+		<%= itemsName %>
+	</td>
+	<td class="amount-col">
+		<%= format.price(itemsAmount) %>
+	</td>
+</tr>
+
+<% if (itemsDiscountAmount) { %>
+	<tr>
+		<td class="title-col">
+			<%= itemsDiscountName %>
+		</td>
+		<td class="amount-col error--text">
+			<%= format.price(-itemsDiscountAmount) %>
+		</td>
+	</tr>
+<% } %>
+
+<% if (extraItemsDiscountAmount) { %>
+	<tr>
+		<td class="title-col">
+			<%= extraItemsDiscountName %>
+		</td>
+		<td class="amount-col error--text">
+			<%= format.price(-extraItemsDiscountAmount) %>
+		</td>
+	</tr>
+<% } %>
+
+<% if (deliveryAmount) { %>
+	<tr class="border-top">
+		<td class="title-col">
+			<b class="font-lg">Subtotal</b>
+		</td>
+		<td class="amount-col font-lg">
+			<b><%= format.price(itemsSubtotalAmount) %></b>
+		</td>
+	</tr>
+	<tr>
+		<td class="title-col">
+			<%= deliveryName %>
+		</td>
+		<td class="amount-col">
+			<%= format.price(deliveryAmount) %>
+		</td>
+	</tr>
+	<% if (deliveryDiscountAmount) { %>
+		<tr>
+			<td class="title-col">
+				<%= deliveryDiscountName %>
+			</td>
+			<td class="amount-col error--text">
+				<%= format.price(-deliveryDiscountAmount) %>
+			</td>
+		</tr>
+	<% } %>
+	
+	<% if (extraDeliveryDiscountAmount) { %>
+		<tr>
+			<td class="title-col">
+				<%= extraDeliveryDiscountName %>
+			</td>
+			<td class="amount-col error--text">
+				<%= format.price(-extraDeliveryDiscountAmount) %>
+			</td>
+		</tr>
+	<% } %>
+<% } %>
+<tr class="border-top">
+	<td class="title-col font-xxl">
+		Total
+	</td>
+	<td class="amount-col font-xxl">
+		<%= format.price(totalAmount) %>
+	</td>
+</tr>

@@ -1,0 +1,16 @@
+{
+	"npm": [
+		"image-size",
+		"bcryptjs",
+		"moment",
+		"dottie",
+		"slugify",
+		"await-event-emitter",
+		"cron",
+		"winston",
+		"morgan",
+		"winston-daily-rotate-file",
+		"cookie-signature",
+		"uid-safe"
+	]
+}

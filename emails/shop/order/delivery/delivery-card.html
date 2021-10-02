@@ -1,0 +1,24 @@
+<table class="card">
+	<tr>
+		<td class="card-title">
+			Forma de Entrega
+		</td>
+	</tr>
+	<% if (forUser) { %>
+		<tr>
+			<td class="card-content">
+				<%- include(`./${order.delivery.methodKey}/card-content.html`) %>
+			</td>
+		</tr>
+	<% } else { %>
+		<tr>
+			<td class="card-content">
+				<p class="pb-1">
+					<b class="font-lg"><%=order.delivery.methodName %></b>
+					<br>
+					<span class="font-sm"><%= order.delivery.optionName %></span>
+				</p>
+			</td>
+		</tr>
+	<% } %>	 
+</table>

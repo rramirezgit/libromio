@@ -1,0 +1,34 @@
+<%- include('../users-layout-open.html', {
+	css: ['shop/order/summary/style-summary.css'],
+	headerLink: {
+		text: 'IR A MIS COMPRAS',
+		url: APP_URL + '/user/orders'
+	}
+}) %>
+<table class="container my-6">
+	<tr>
+		<td>
+			<table class="card">
+				<tr>
+					<td>
+						<p class="font-lg">
+							<b>Orden de compra</b>
+						</p>
+						<p class="font-sm">
+							#<%= order.code %>
+						</p>
+						<p class="py-2 font-sm">
+							Confirmaste tu orden de compra el día <b><%= format.date(order.confirmedAt) %></b> a las <b><%= format.time(order.confirmedAt) %></b>.
+						</p>
+						<p class="font-sm">
+							<b>Te mantendremos informado</b> vía e-mail acerca del estado de tu compra y podrás acceder a todo el detalle actualizado dentro de tu cuenta.
+						</p>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<%- include('./order-cards.html', {forUser: true}) %>
+</table>
+
+<%- include('../users-layout-close.html') %>

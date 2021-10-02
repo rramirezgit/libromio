@@ -1,0 +1,4 @@
+{
+	"parent": "shop",
+	"npm": ["url-slug", "sharp"]
+}

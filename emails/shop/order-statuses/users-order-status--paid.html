@@ -1,0 +1,46 @@
+<%- include('../users-layout-open.html', {
+	headerLink: {
+		text: 'IR A MIS COMPRAS',
+		url: APP_URL + '/user/orders'
+	}
+}) %>
+<table class="container white">
+	<tr>
+		<td class="py-6">
+			<p class="font-sm pb-3">
+				Pedido <span class="px-1 whity blacky--text">#<%= order.code %></span>
+			</p>
+			<p class="font-xl pb-3">
+				<b>Recibimos tu pago</b>
+			</p>
+			<p class="pb-3">
+				El pago se acreditó el día <b><%= format.date(order.paidAt) %></b> a las <b><%= format.time(order.paidAt) %></b>
+				<% if (order.delivery) { %>
+					<br />
+					<span>
+						Comenzaremos a preparar tu pedido. En breve recibirás un nuevo correo electrónico 
+						con el estado de tu orden.
+					</span>
+				<% } %>
+			</p>
+			<% if (orderMng.hasDigitalItems()) { %>
+				<p class="pb-3 font-lg">
+					<b>Productos Digitales</b>
+				</p>
+				<p class="pb-3">
+					Ya podés descargar tus productos digitales!<br>Ingresá en el siguiente link para obtenerlos.
+				</p>
+				<p class="pb-5">
+					<a href="<%= APP_URL + '/user/orders/' + order.id %>" class="btn primary">
+						Descargar
+					</a>
+				</p>
+			<% } %>
+			<p>
+				<b>¡Gracias por tu compra, <%= user.firstname %>!</b>
+			</p>
+		</td>
+	</tr>
+</table>
+
+<%- include('../users-layout-close.html') %>

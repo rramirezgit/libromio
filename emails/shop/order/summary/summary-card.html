@@ -1,0 +1,20 @@
+<table class="card">
+	<tr>
+		<td class="card-title">
+			Resumen de compra
+		</td>
+	</tr>
+	<tr>
+		<td class="card-content ">
+			<table class="summary-items-table">
+				<% for( let item of order.items ) { %>
+					<%- include('./summary-item.html', { order, item }) %>
+				<% } %>
+			</table>
+
+			<table class="summary-totals-table">
+				<%- include('./summary-totals.html', { order }) %>
+			</table>
+		</td>
+	</tr>
+</table>

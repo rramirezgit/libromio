@@ -1,0 +1,32 @@
+<%- include('../../admin/admins-layout-open.html', {
+	css: ['shop/order/summary/style-summary.css'],
+	headerLink: {
+		text: 'VER ORDEN DE COMPRA',
+		url: APP_URL + adminBaseUrl + '/sales/orders/' + order.id
+	}
+}) %>
+<table class="container my-6">
+	<tr>
+		<td>
+			<table class="card">
+				<tr>
+					<td>
+						<p class="font-lg">
+							<b>Orden de compra confirmada</b>
+						</p>
+						<p class="font-sm">
+							#<%= order.code %>
+						</p>
+						<p class="py-2 font-sm">
+							El usuario <b><%= order.user.firstname %> <%= order.user.lastname %></b> &lt;<%= order.user.accountEmail %>&gt; ha confirmado su compra 
+							el día <b><%= format.date(order.confirmedAt) %></b> a las <b><%= format.time(order.confirmedAt) %></b>.
+						</p>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<%- include('./order-cards.html', {forUser: false}) %>
+</table>
+
+<%- include('../../admin/admins-layout-close.html') %>

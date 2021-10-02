@@ -1,0 +1,4 @@
+{
+	"verbose": false,
+	"ignore": ["storage/", "public/uploads/", "vue-dist/", "vue-src/", "__logs/"]
+}

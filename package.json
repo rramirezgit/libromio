@@ -1,0 +1,128 @@
+{
+  "name": "libromio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:site": "cross-env PAGE_KEY=site vue-cli-service build --no-clean",
+    "build-dev:site": "cross-env PAGE_KEY=site vue-cli-service build --no-clean --watch",
+    "build:admin": "cross-env PAGE_KEY=admin vue-cli-service build",
+    "build-dev:admin": "cross-env PAGE_KEY=admin vue-cli-service build --no-clean --watch",
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint",
+    "dev": "nodemon app.js --watch",
+    "postinstall": "patch-package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/drubbit/libromio"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://libromio.com",
+  "dependencies": {
+    "@egjs/vue-flicking": "^4.2.2",
+    "@mdi/js": "^5.9.55",
+    "accept-webp": "^1.4.0",
+    "await-event-emitter": "^2.0.2",
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "case-anything": "^1.1.3",
+    "cls-hooked": "^4.2.2",
+    "cookie-parser": "^1.4.5",
+    "cookie-signature": "^1.1.0",
+    "core-js": "^3.16.2",
+    "cors": "^2.8.5",
+    "cron": "^1.8.2",
+    "cryptr": "^6.0.2",
+    "deep-freeze-node": "^1.1.3",
+    "deepmerge": "^4.2.2",
+    "dotenv": "^10.0.0",
+    "dottie": "^2.0.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "glob": "^7.1.7",
+    "image-size": "^1.0.0",
+    "inline-css": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "md5": "^2.3.0",
+    "mercadopago": "^1.5.8",
+    "module-alias": "^2.2.2",
+    "moment": "^2.29.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.0",
+    "nodemailer": "^6.6.3",
+    "object-hash": "^2.2.0",
+    "patch-package": "^6.4.7",
+    "prerender-node": "^3.2.5",
+    "sequelize": "^6.6.5",
+    "sequelize-auto-migrations-v2": "^1.2.1",
+    "sequelize-cli": "^6.2.0",
+    "sequelize-to-json": "^0.10.4",
+    "sharp": "^0.29.0",
+    "slugify": "^1.6.0",
+    "uid-safe": "^2.1.5",
+    "universal-analytics": "^0.4.23",
+    "url-slug": "^3.0.2",
+    "vue": "^2.6.14",
+    "vue-facebook-login-component": "^4.0.2",
+    "vue-google-oauth2": "^1.5.8",
+    "vue-gtag": "^1.16.1",
+    "vue-meta": "^2.4.0",
+    "vue-router": "^3.5.2",
+    "vuetify": "^2.5.8",
+    "vuex": "^3.6.2",
+    "vuex-pathify": "^1.5.1",
+    "vuex-router-sync": "^5.0.0",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.5"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.5.13",
+    "@vue/cli-plugin-eslint": "^4.5.13",
+    "@vue/cli-service": "^4.5.13",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^7.16.0",
+    "gulp": "^4.0.2",
+    "gulp-git": "^2.10.1",
+    "sass": "^1.32.8",
+    "sass-loader": "^9.0.3",
+    "vue-cli-plugin-vuetify": "^2.4.2",
+    "vue-template-compiler": "^2.6.14",
+    "vuetify-loader": "^1.7.2",
+    "yargs": "^16.2.0"
+  },
+  "_moduleAliases": {
+    "@plugit": "plugit",
+    "#": "plugit"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {
+      "vue/valid-v-slot": [
+        "error",
+        {
+          "allowModifiers": true
+        }
+      ]
+    }
+  },
+  "browserslist": [
+    "cover 99.5%"
+  ]
+}

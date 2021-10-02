@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		{% if (SiteFavicon) { %}
+		<link rel="icon" href="{%= SiteFavicon.faviconSm %}" />
+		{% } %}
+		<title><%= htmlWebpackPlugin.options.title %></title>
+		<link
+			rel="preload"
+			href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css"
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
+		/>
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
+		/>
+		{% if (SiteScripts) { %} {% SiteScripts.filter(({zone}) => zone == 'head').forEach(({script}) => { %}
+		{%- script %} {% }) %} {% } %}
+	</head>
+	<body>
+		{% if (SiteScripts) { %} {% SiteScripts.filter(({zone}) => zone == 'body-start').forEach(({script}) => {
+		%} {%- script %} {% }) %} {% } %}
+		<div id="app"></div>
+		<!-- built files will be auto injected -->
+		<script>
+			window.__SRV = {%- JSON.stringify(__SRV) %}
+		</script>
+		{% if (SiteScripts) { %} {% SiteScripts.filter(({zone}) => zone == 'body-end').forEach(({script}) => {
+		%} {%- script %} {% }) %} {% } %}
+	</body>
+</html>

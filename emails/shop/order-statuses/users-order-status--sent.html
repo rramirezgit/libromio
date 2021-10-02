@@ -1,0 +1,27 @@
+<%- include('../users-layout-open.html', {
+	headerLink: {
+		text: 'IR A MIS COMPRAS',
+		url: APP_URL + '/user/orders'
+	}
+}) %>
+<table class="container white">
+	<tr>
+		<td class="py-6">
+			<p class="font-sm pb-3">
+				Pedido <span class="px-1 whity blacky--text">#<%= order.code %></span>
+			</p>
+			<p class="font-xl">
+				<b>El paquete está en camino</b>
+			</p>
+			<p class="pt-3">
+				Hemos entregado tu compra al repartidor.
+			</p>
+			<%- include(`../order/delivery/Shipping-${order.delivery.optionKey}/status-sent-message.html`) %>
+			<p class="pt-3">
+				<b>¡Que lo disfrutes, <%= user.firstname %>!</b>
+			</p>
+		</td>
+	</tr>
+</table>
+
+<%- include('../users-layout-close.html') %>

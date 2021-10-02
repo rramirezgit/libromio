@@ -1,0 +1,13 @@
+<% let data = order.delivery.data %>
+<p class="pb-1 font-lg">
+	<b><%= data.title %></b>
+	<br>
+	<%= data.fullAddressLine %> 
+</p>
+<ul class="pl-3 li-mb-1">
+	<li><%= data.businessHours %></li>
+	<li><%= data.availability %></li>
+	<li><%= data.costMsg %></li>
+	<li><%= data.extraMsg %></li>
+</ul>
+

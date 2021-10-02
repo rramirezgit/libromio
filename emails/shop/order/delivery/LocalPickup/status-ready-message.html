@@ -1,0 +1,10 @@
+<% let data = order.delivery.data %>
+<p class="pb-3">
+	Ya podés pasar a retirarla por nuestro local, en <%= data.fullAddressLine %>.
+</p>
+<ul class="pl-3 li-mb-1">
+	<li><%= data.businessHours %></li>
+	<li><%= data.availability %></li>
+	<li><%= data.costMsg %></li>
+	<li><%= data.extraMsg %></li>
+</ul>

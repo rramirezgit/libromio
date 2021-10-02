@@ -1,0 +1,5 @@
+{
+	"requires": ["site", "user"],
+	"children": ["shop-order", "shop-catalog"],
+	"plugins": ["analytics", "shopping-feed"]
+}

@@ -1,0 +1,37 @@
+<table class="card">
+	<tr>
+		<td class="card-title">
+			Contacto y Facturación
+		</td>
+	</tr>
+	<tr>
+		<td class="card-content">
+			<p class="pb-2">
+				<b>Contacto</b>
+			</p>
+			<p class="pb-4">
+				<%= order.buyer.firstname %> <%= order.buyer.lastname %> <br />
+				<%= order.buyer.email %> <br />
+				(<%= order.buyer.phonePrefix %>) <%= order.buyer.phoneNumber %>
+			</p>
+			<p class="pb-2">
+				<b>Facturación</b>
+			</p>
+			<p>
+				<% if (order.invoice.business) { %>
+				<span><%= order.invoice.businessName %></span>
+				<br />
+				<span>CUIT <%= order.invoice.businessIdNumber %></span>
+				<br />
+				<span>Factura <%= order.invoice.invoiceType %></span>
+				<% } else { %>
+				<span><%= order.invoice.personLastname %>, <%= order.invoice.personFirstname %></span>
+				<br />
+				<span>DNI <%= order.invoice.personIdNumber %> </span>
+				<% } %>
+				<br />
+				<span><%= getAddressLine(order.invoiceAddress) %> </span>
+			</p>
+		</td>
+	</tr>
+</table>

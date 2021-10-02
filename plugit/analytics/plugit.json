@@ -1,0 +1,5 @@
+{
+	"parent": "site",
+	"plugin": true,
+	"npm": ["vue-gtag", "universal-analytics"]
+}

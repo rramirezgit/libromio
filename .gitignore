@@ -1,0 +1,12 @@
+node_modules/
+.current-branch
+#plugit-express
+__logs/
+vue-dist/
+storage/tmp/*
+!storage/tmp/.empty
+storage/sessions/*
+!storage/sessions/.empty
+public/uploads/*/*
+!public/uploads/*/.empty
+vue-src/*/autoloader.js

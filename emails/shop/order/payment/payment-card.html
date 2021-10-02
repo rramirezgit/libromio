@@ -1,0 +1,32 @@
+<table class="card">
+	<tr>
+		<td class="card-title">
+			Forma de Pago
+		</td>
+	</tr>
+	<% if (forUser) { %>
+		<tr>
+			<td class="card-content">
+				<%- include(`./${order.payments[0].methodKey}/card-content.html`) %>
+			</td>
+		</tr>
+		<tr>
+			<td class="card-title pt-3">
+				¿Cómo realizo el pago?
+			</td>
+		</tr>
+		<tr>
+			<td class="card-content">
+				<%- include(`./${order.payments[0].methodKey}/instructions-card-content.html`) %>
+			</td>
+		</tr>
+	<% } else { %>
+		<tr>
+			<td class="card-content">
+				<p class="pb-1 font-lg">
+					<b><%= order.payments[0].methodName %></b>
+				</p>
+			</td>
+		</tr>
+	<% } %>
+</table>

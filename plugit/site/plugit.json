@@ -1,0 +1,9 @@
+{
+	"requires": ["admin"],
+	"package": {
+		"scripts": {
+			"build:site": "cross-env PAGE_KEY=site vue-cli-service build --no-clean",
+			"build-dev:site": "cross-env PAGE_KEY=site vue-cli-service build --no-clean --watch"
+		}
+	}
+}

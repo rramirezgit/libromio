@@ -1,0 +1,26 @@
+<%- include('../users-layout-open.html', {
+	headerLink: {
+		text: 'IR A MIS COMPRAS',
+		url: APP_URL + '/user/orders'
+	}
+}) %>
+<table class="container white">
+	<tr>
+		<td class="py-6">
+			<p class="font-sm pb-3">
+				Pedido <span class="px-1 whity blacky--text">#<%= order.code %></span>
+			</p>
+			<p class="font-xl">
+				<b>Estamos preparando tu paquete</b>
+			</p>
+			<p class="py-3">
+				Ya comenzamos a armar tu pedido. En breve recibirás una nueva notficación cuando esté listo para su entrega.
+			</p>
+			<p>
+				<b>¡Saludos, <%= user.firstname %>!</b>
+			</p>
+		</td>
+	</tr>
+</table>
+
+<%- include('../users-layout-close.html') %>
