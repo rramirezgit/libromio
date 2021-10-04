@@ -1,20 +1,19 @@
 {
-  "local": true,
-  "requires": [
-    "shop"
-  ],
-  "npm": [],
-  "plugins": [
-    "shop-delivery-shipping",
-    "shop-delivery-localpickup",
-    "shop-payment-mercadopago"
-  ],
-  "package": {
-    "name": "libromio",
-    "repository": {
-      "type": "git",
-      "url": "git+https://bitbucket.org/drubbit/libromio"
-    },
-    "homepage": "https://libromio.com"
-  }
+	"local": true,
+	"requires": ["shop"],
+	"npm": [],
+	"plugins": [
+		"shop-delivery-shipping",
+		"shop-delivery-localpickup",
+		"shipping-carrier-andreani",
+		"shop-payment-mercadopago"
+	],
+	"package": {
+		"name": "libromio",
+		"repository": {
+			"type": "git",
+			"url": "git+https://bitbucket.org/drubbit/libromio"
+		},
+		"homepage": "https://libromio.com"
+	}
 }

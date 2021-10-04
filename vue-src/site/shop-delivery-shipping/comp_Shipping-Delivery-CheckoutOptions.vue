@@ -25,7 +25,7 @@ export default {
 		onAddressSelected(address) {
 			this.address = address
 			this.$shopApi.post({
-				url: '/checkout/delivery/shipping/calculate',
+				url: '/checkout/delivery/shipping/andreani/calculate',
 				data: { zipcodeId: address.zipcodeId },
 				query: { hash: this.checkout.hash },
 				loading: (v) => (this.loadingCost = v),
